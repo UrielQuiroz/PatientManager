@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Error from './Error';
+import Paciente from './Paciente';
 
 function Formulario({ pacientes, setPacientes, paciente }) {
 
@@ -12,6 +13,17 @@ function Formulario({ pacientes, setPacientes, paciente }) {
     const [ error, setError ] = useState(false)
 
     useEffect(() => {
+
+        if (Object.keys(pacientes).length > 0) {
+            setNombre(paciente.nombre);
+            setPropietario(paciente.propietario);
+            setEmail(paciente.email);
+            setFecha(paciente.fecha);
+            setSintomas(paciente.sintomas);
+        } else {
+            console.log('No hay nada alv')
+        }
+
         //console.log(paciente);
     }, [paciente])
     
