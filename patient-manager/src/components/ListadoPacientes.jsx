@@ -4,7 +4,9 @@ import React from 'react'
 import Paciente from './Paciente'
 
 
-const ListadoPacientes = () => {
+const ListadoPacientes = ({pacientes}) => {
+
+
     return (
         <div className='md:w-1/2 lg:w-3/5'>
             <h2 className='font-black text-3xl text-center'>Listado de pacientes</h2>
@@ -14,14 +16,12 @@ const ListadoPacientes = () => {
             </p>
 
             <div className='md:h-screen overflow-y-scroll'>
-                <Paciente />    
-                <Paciente />    
-                <Paciente />    
-                <Paciente />    
-                <Paciente />    
-                <Paciente />    
-                <Paciente />    
-                <Paciente /> 
+                { pacientes.map( paciente => (
+                    <Paciente
+                        paciente={paciente} 
+                    /> 
+                ))}
+                   
             </div>   
             
         </div>
