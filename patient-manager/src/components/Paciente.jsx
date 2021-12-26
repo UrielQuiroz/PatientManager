@@ -1,6 +1,6 @@
 import React from "react";
 
-function Paciente({paciente, setPaciente}) {
+function Paciente({paciente, setPaciente }) {
 
   const { nombre, propietario, email, fecha, sintomas } = paciente;
 
