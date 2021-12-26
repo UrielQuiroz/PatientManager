@@ -18,6 +18,7 @@ const ListadoPacientes = ({pacientes}) => {
             <div className='md:h-screen overflow-y-scroll'>
                 { pacientes.map( paciente => (
                     <Paciente
+                        key={paciente.id}
                         paciente={paciente} 
                     /> 
                 ))}
